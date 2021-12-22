@@ -9,6 +9,15 @@
         <% end %>
       </figure>
       <div class="pt-3">
+        <%
+=begin%>
+ <p class="subtitle is-5 has-text-weight-bold has-text-justified is-color-secondary">
+          <%= project.created_at.day %>
+          <%= l project.created_at.to_date, format: :month %>
+          <%= project.created_at.year %>
+        </p>  
+<%
+=end%>
         <p class="title is-4 has-text-left">
           <%= project.name %>
         </p>
