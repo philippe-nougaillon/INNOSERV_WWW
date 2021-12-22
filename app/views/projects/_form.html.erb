@@ -1,0 +1,67 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :initWithValues %>
+    <%= form.text_field :initWithValues %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :information %>
+    <%= form.text_area :information %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :videofile %>
+    <%= form.text_field :videofile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :subTitles %>
+    <%= form.text_field :subTitles %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fieldOfEducation %>
+    <%= form.check_box :fieldOfEducation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fieldOfWelfare %>
+    <%= form.check_box :fieldOfWelfare %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fieldOfHealth %>
+    <%= form.check_box :fieldOfHealth %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
