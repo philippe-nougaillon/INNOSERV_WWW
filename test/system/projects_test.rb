@@ -20,7 +20,7 @@ class ProjectsTest < ApplicationSystemTestCase
     check "Fieldofwelfare" if @project.fieldOfWelfare
     fill_in "Image", with: @project.image
     fill_in "Information", with: @project.information
-    fill_in "Initwithvalues", with: @project.initWithValues
+    fill_in "name", with: @project.name
     fill_in "Subtitles", with: @project.subTitles
     fill_in "Videofile", with: @project.videofile
     fill_in "Website", with: @project.website
@@ -40,7 +40,7 @@ class ProjectsTest < ApplicationSystemTestCase
     check "Fieldofwelfare" if @project.fieldOfWelfare
     fill_in "Image", with: @project.image
     fill_in "Information", with: @project.information
-    fill_in "Initwithvalues", with: @project.initWithValues
+    fill_in "name", with: @project.name
     fill_in "Subtitles", with: @project.subTitles
     fill_in "Videofile", with: @project.videofile
     fill_in "Website", with: @project.website

@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  initWithValues: MyString
+  name: MyString
   description: MyString
   image: MyString
   information: MyText
@@ -13,7 +13,7 @@ one:
   fieldOfHealth: false
 
 two:
-  initWithValues: MyString
+  name: MyString
   description: MyString
   image: MyString
   information: MyText

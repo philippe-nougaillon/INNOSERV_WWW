@@ -17,7 +17,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create project" do
     assert_difference('Project.count') do
-      post projects_url, params: { project: { description: @project.description, fieldOfEducation: @project.fieldOfEducation, fieldOfHealth: @project.fieldOfHealth, fieldOfWelfare: @project.fieldOfWelfare, image: @project.image, information: @project.information, initWithValues: @project.initWithValues, subTitles: @project.subTitles, videofile: @project.videofile, website: @project.website } }
+      post projects_url, params: { project: { description: @project.description, fieldOfEducation: @project.fieldOfEducation, fieldOfHealth: @project.fieldOfHealth, fieldOfWelfare: @project.fieldOfWelfare, image: @project.image, information: @project.information, name: @project.name, subTitles: @project.subTitles, videofile: @project.videofile, website: @project.website } }
     end
 
     assert_redirected_to project_url(Project.last)
@@ -34,7 +34,7 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update project" do
-    patch project_url(@project), params: { project: { description: @project.description, fieldOfEducation: @project.fieldOfEducation, fieldOfHealth: @project.fieldOfHealth, fieldOfWelfare: @project.fieldOfWelfare, image: @project.image, information: @project.information, initWithValues: @project.initWithValues, subTitles: @project.subTitles, videofile: @project.videofile, website: @project.website } }
+    patch project_url(@project), params: { project: { description: @project.description, fieldOfEducation: @project.fieldOfEducation, fieldOfHealth: @project.fieldOfHealth, fieldOfWelfare: @project.fieldOfWelfare, image: @project.image, information: @project.information, name: @project.name, subTitles: @project.subTitles, videofile: @project.videofile, website: @project.website } }
     assert_redirected_to project_url(@project)
   end
 
