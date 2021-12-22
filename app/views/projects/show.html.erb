@@ -1,54 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>name:</strong>
-  <%= @project.name %>
-</p>
+<section class="hero is-background-color-secondary is-medium mb-6">
+  <div class="hero-body has-text-centered">
+    <p class="title is-1 has-text-centered is-color-secondary mt-6">
+      <%= @project.name %>
+    </p>
+    <p class="subtitle is-3 has-text-centered has-text-light">
+      <%= @project.description %>
+    </p>
+  </div>
+</section>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+<% if FileTest.exist?("app/assets/images/" + @project.image + ".png") %>
+  <figure class="image">
+    <%= image_tag @project.image, width: '100%', height: '100%', alt: "image du projet '#{ @project.name }'" %>
+  </figure>
+<% end %>
 
-<p>
-  <strong>Image:</strong>
-  <%= @project.image %>
-</p>
+<div class="content is-large">
+  <h1>Informations</h1>
+  <p>
+    <%= @project.information %>
+  </p>
+  <h2>Détails</h2>
+  <p>
+    Site du projet :
+    <%= @project.website %>
+  </p>
+  <p>
+    Videofile :
+    <%= @project.videofile %>
+  </p>
+  <p>
+    Sous-titres :
+    <%= @project.subTitles %>
+  </p>
+  <ul>
+    <li><strong>Fieldofeducation:</strong> <%= @project.fieldOfEducation %></li>
+    <li><strong>Fieldofwelfare:</strong> <%= @project.fieldOfWelfare %></li>
+    <li><strong>Fieldofhealth:</strong> <%= @project.fieldOfHealth %></li>
+  </ul>
+</div>
 
-<p>
-  <strong>Information:</strong>
-  <%= @project.information %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @project.website %>
-</p>
-
-<p>
-  <strong>Videofile:</strong>
-  <%= @project.videofile %>
-</p>
-
-<p>
-  <strong>Subtitles:</strong>
-  <%= @project.subTitles %>
-</p>
-
-<p>
-  <strong>Fieldofeducation:</strong>
-  <%= @project.fieldOfEducation %>
-</p>
-
-<p>
-  <strong>Fieldofwelfare:</strong>
-  <%= @project.fieldOfWelfare %>
-</p>
-
-<p>
-  <strong>Fieldofhealth:</strong>
-  <%= @project.fieldOfHealth %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%
+=begin%>
+ <%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %> 
+<%
+=end%>
