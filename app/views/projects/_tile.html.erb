@@ -1,2 +1,21 @@
-<p>a
-</p>
+<div class="tile is-parent is-4 pb-6">
+  <article class="box tile is-child">
+    <%= link_to project do %>
+      <figure class="image">
+        <% if FileTest.exist?("app/assets/images/" + project.image + ".png") %>
+          <%= image_tag project.image, width: '100%', height: '100%', alt: "image du projet '#{ project.name }'" %>
+        <% else %>
+          <%= image_tag 'Inno-background.png', width: '100%', height: '100%', alt: "image de remplacement du projet '#{ project.name }'" %>
+        <% end %>
+      </figure>
+      <div class="pt-3">
+        <p class="title is-4 has-text-left">
+          <%= project.name %>
+        </p>
+        <p class="is-size-6 has-text-justified">
+          <%= strip_tags(project.description) %>
+        </p>
+      </div>
+    <% end %>
+  </article>
+</div>

@@ -36,11 +36,11 @@ $slightblack : #272223;
 
 /// background color
 .is-background-color-primary{
-  background-color: $color-primary-light;
+  background-color: $other-color-primary;
 }
 
 .is-background-color-secondary{
-  background-color: $color-secondary-light;
+  background-color: $other-color-secondary;
 }
 
 // .button{
@@ -51,4 +51,4 @@ $slightblack : #272223;
 //   background-color: none; // this only applies the transition, with the color given by bulma
 // }
 
- @import 'bulma';
+// @import 'bulma';
