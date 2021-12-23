@@ -56,5 +56,30 @@ a:hover {
 //   background-color: none; // this only applies the transition, with the color given by bulma
 // }
 
+
+/// FONT AWESOME ICON ///
+
+.fab, .fas{
+  color: rgb(208,213,218);
+}
+.fa-edit, .fa-facebook, .fa-twitter, .fa-youtube{
+  color: grey;
+  transition: color .3s;
+}
+
+.fa-facebook:hover{
+  color: rgb(56,84,149);
+}
+
+.fa-twitter:hover{
+  color :rgb(21,156,231);
+}
+
+.fa-youtube:hover{
+  color :rgb(255,0,0);
+}
+
+//FONT AWESOME ICON
+
 @import 'bulma';
 @import 'bulma-extensions';

@@ -1,4 +1,4 @@
-<header class="navbar">
+<header class="navbar is-fixed-top">
   <div class="container">
     <div class="navbar-brand">
       <%= link_to root_path, 'aria-label': 'logo' do %>
@@ -21,12 +21,12 @@
             class: "navbar-item is-color-primary" 
         %>
         <%= link_to "About",
-            root_path, 
+            pages_about_path, 
             class: "navbar-item is-color-primary" 
         %>
         <span class="navbar-item">
           <a class="button is-warning is-inverted">
-            <span>Connection</span>
+            <span>Log in</span>
           </a>
         </span>
       </div>
