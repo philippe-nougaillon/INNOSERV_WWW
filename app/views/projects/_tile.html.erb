@@ -9,20 +9,22 @@
         <% end %>
       </figure>
       <div class="pt-3">
-        <%
-=begin%>
- <p class="subtitle is-5 has-text-weight-bold has-text-justified is-color-secondary">
-          <%= project.created_at.day %>
-          <%= l project.created_at.to_date, format: :month %>
-          <%= project.created_at.year %>
-        </p>  
-<%
-=end%>
         <p class="title is-4 has-text-left">
           <%= project.name %>
         </p>
-        <p class="is-size-6 has-text-justified">
+        <p class="subtitle is-size-6 has-text-justified">
           <%= strip_tags(project.description) %>
+        </p>
+        <p class="is-color-primary is-size-6 has-text-left">
+          <% if project.fieldOfEducation %>
+            Éducation 
+          <% end %>
+          <% if project.fieldOfWelfare %>
+            Bien-Être 
+          <% end %>
+          <% if project.fieldOfHealth %>
+            Santé 
+          <% end %>
         </p>
       </div>
     <% end %>

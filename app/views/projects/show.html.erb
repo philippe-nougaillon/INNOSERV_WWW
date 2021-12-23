@@ -1,45 +1,57 @@
+<%= render 'partials/navbar' %>
+
 <p id="notice"><%= notice %></p>
 
-<section class="hero is-background-color-secondary is-medium mb-6">
-  <div class="hero-body has-text-centered">
-    <p class="title is-1 has-text-centered is-color-secondary mt-6">
-      <%= @project.name %>
+<div class="container">
+  <h1 class="title is-1 is-color-secondary mt-6">
+    <%= @project.name %>
+  </h1>
+  <h2 class="subtitle is-3">
+    <%= @project.description %>
+  </h2>
+  <p class="is-size-2 is-color-primary is-size-6">
+    <% if @project.fieldOfEducation %>
+      Éducation 
+    <% end %>
+    <% if @project.fieldOfWelfare %>
+      Bien-Être 
+    <% end %>
+    <% if @project.fieldOfHealth %>
+      Santé 
+    <% end %>
+  </p>
+
+  <%
+=begin%>
+ <% if FileTest.exist?("app/assets/images/" + @project.image + ".png") %> 
+<%
+=end%>
+      <%= video_tag '/videos/BlueAssist_06.03.2013-iphone.mp4',poster: @project.image, controls: true, preload: 'none' %>
+  <%
+=begin%>
+ <% end %> 
+<%
+=end%>
+
+  <div class="content is-large">
+    <h1>Informations</h1>
+    <p>
+      <%= @project.information %>
     </p>
-    <p class="subtitle is-3 has-text-centered has-text-light">
-      <%= @project.description %>
+    <h2>Détails</h2>
+    <p>
+      Site du projet :
+      <%= @project.website %>
+    </p>
+    <p>
+      Videofile :
+      <%= @project.videofile %>
+    </p>
+    <p>
+      Sous-titres :
+      <%= @project.subTitles %>
     </p>
   </div>
-</section>
-
-<% if FileTest.exist?("app/assets/images/" + @project.image + ".png") %>
-  <figure class="image">
-    <%= image_tag @project.image, width: '100%', height: '100%', alt: "image du projet '#{ @project.name }'" %>
-  </figure>
-<% end %>
-
-<div class="content is-large">
-  <h1>Informations</h1>
-  <p>
-    <%= @project.information %>
-  </p>
-  <h2>Détails</h2>
-  <p>
-    Site du projet :
-    <%= @project.website %>
-  </p>
-  <p>
-    Videofile :
-    <%= @project.videofile %>
-  </p>
-  <p>
-    Sous-titres :
-    <%= @project.subTitles %>
-  </p>
-  <ul>
-    <li><strong>Fieldofeducation:</strong> <%= @project.fieldOfEducation %></li>
-    <li><strong>Fieldofwelfare:</strong> <%= @project.fieldOfWelfare %></li>
-    <li><strong>Fieldofhealth:</strong> <%= @project.fieldOfHealth %></li>
-  </ul>
 </div>
 
 <%

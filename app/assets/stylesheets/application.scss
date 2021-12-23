@@ -43,6 +43,11 @@ $slightblack : #272223;
   background-color: $other-color-secondary;
 }
 
+
+a:hover {
+  background-color: transparent;
+}
+
 // .button{
 //   transition: background-color .2s;
 // }
@@ -51,4 +56,5 @@ $slightblack : #272223;
 //   background-color: none; // this only applies the transition, with the color given by bulma
 // }
 
-// @import 'bulma';
+@import 'bulma';
+@import 'bulma-extensions';
