@@ -7,7 +7,7 @@
   <h2 class="subtitle is-3">
     <%= @project.description %>
   </h2>
-  <p class="is-size-2 is-color-primary is-size-6">
+  <p class="is-size-6 is-color-primary">
     <% if @project.fieldOfEducation %>
       Education 
     <% end %>
@@ -26,7 +26,7 @@
     <%= link_to @project.website, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
   </div>
 
-  <p class="text is-size-6">
+  <p class="is-size-6 mb-6">
     <%= @project.information %>
   </p>
 </div>
