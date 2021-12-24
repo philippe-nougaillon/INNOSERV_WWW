@@ -59,3 +59,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bulma-rails', '~> 0.9.0'
 gem 'bulma-extensions-rails', '~> 6.2.7'
 gem 'bulma_form_builder'
+
+# FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record.
+gem 'friendly_id', '~> 5.4.0'

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/home'
-  get 'pages/about'
+  get :about, to: 'pages#about'
   resources :projects, only: :show
 
   root 'pages#home'
