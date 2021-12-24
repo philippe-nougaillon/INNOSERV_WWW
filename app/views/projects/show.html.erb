@@ -1,39 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h1 class="title is-1 is-color-secondary mt-6">
+
+<div class="container pt-6 mb-6">
+  <h1 class="title is-1 is-color-primary mt-6">
     <%= @project.name %>
   </h1>
   <h2 class="subtitle is-3">
     <%= @project.description %>
   </h2>
-  <p class="is-size-6 is-color-primary">
+  <div class="tags mb-6">
     <% if @project.fieldOfEducation %>
-      Education 
+      <p class="tag is-size-6 is-color-primary">
+        Education
+      </p>
     <% end %>
     <% if @project.fieldOfWelfare %>
-      Welfare 
+      <p class="tag is-size-6 is-color-primary">
+        Welfare
+      </p>
     <% end %>
     <% if @project.fieldOfHealth %>
-      Health 
+      <p class="tag is-size-6 is-color-primary">
+        Health
+      </p>
     <% end %>
-  </p>
+  </div>
   <div class="container has-text-centered mb-6">
     <%= video_tag '/videos/BlueAssist_06.03.2013-iphone.mp4', width: '600', class:"is-centered",poster: @project.image, controls: true, preload: 'none' %>
-    <p>
-      Website :
-    </p>
-    <%= link_to @project.website, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
   </div>
 
-  <p class="is-size-6 mb-6">
-    <%= @project.information %>
-  </p>
-</div>
+  <!--TODO: agrandir le texte ci-dessous (simple_format pose problème) -->
+  <h1 class="content title">
+    <%= simple_format(@project.information) %>
+  </h1>
 
-<%
-=begin%>
- <%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %> 
-<%
-=end%>
+  <% unless @project.website.blank?  %>
+    <p>
+      Website :
+      <%= link_to @project.website, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
+    </p>
+  <% end %>
+</div>

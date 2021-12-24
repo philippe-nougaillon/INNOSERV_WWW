@@ -1,27 +1,58 @@
-
-<div class="columns is-vcentered mx-4 mt-6 is-desktop">
-
-  <div class="column is-vcentered is-one-third ml-6">
+<div class="is-divider m-5">
+</div>
+<div class="columns is-vcentered mx-4 is-desktop">
+  <div class="column is-vcentered ml-6">
     <a href="https://www.facebook.com/innoserv" target="_blank" rel="noreferrer noopener" aria-label="Facebook">
-      <i class="fab fa-facebook fa-3x mx-3"></i>
+      <i class="fab fa-facebook fa-2x mx-3"></i>
     </a>
+    <br>
     <a href="https://twitter.com/INNOSERVproject" target="_blank" rel="noreferrer noopener" aria-label="Twitter">
-      <i class="fab fa-twitter fa-3x mx-3"></i>
+      <i class="fab fa-twitter fa-2x mx-3"></i>
     </a>
+    <br>
     <a href="https://www.youtube.com/channel/UCX-SE-AvqteYfgv1cNA0o2w" target="_blank" rel="noreferrer noopener" aria-label="Youtube">
-      <i class="fab fa-youtube fa-3x mx-3"></i>
+      <i class="fab fa-youtube fa-2x mx-3"></i>
     </a>
   </div>
 
   <div class="column">
+    <ul class="menu-list is-size-6">
+      <li class="has-text-weight-bold">
+          <%= link_to "Home",
+            root_path, 
+            class: "navbar-item is-color-primary" 
+        %>
+      </li>
+      <li class="has-text-weight-bold">
+          <%= link_to "Videos",
+            root_path(anchor: "videos"),
+            class: "navbar-item is-color-primary" 
+        %>
+      </li>
+      <li class="has-text-weight-bold">
+        <%= link_to "About",
+            pages_about_path, 
+            class: "navbar-item is-color-primary" 
+        %>
+      </li>
+    </ul>
+  </div>
+  <div class="column">
+    <%= link_to root_path, 'aria-label': 'logo' do %>
+      <%= image_tag 'logo.png', width: '75%', height: '75%', alt: 'logo INNOSERV' %>
+    <% end %>
+  </div>
+  <div class="column">
+    <%= mail_to 'contact@innoserv-project.eu', 'contact@innoserv-project.eu' %>
   </div>
 
-  <div class="column is-one-fifth mr-6">
+  <div class="column mr-6">
+  <%= link_to ("https://cordis.europa.eu/project/id/290542"), 'aria-label': 'cordis.europa.eu' do %>
     <%= image_tag 'logo_ec.png', width: '100%', height: '150%', alt: 'Logo European Commission European research Area / Seventh Framework Programme, funded under Socio-economic Sciences & Humanities', loading: 'lazy' %>
+  <% end %>
   </div>
 </div>
 
-<section class="hero is-small is-background-color-primary mx-6 mb-6">
-  <br>
+<section class="hero is-small is-background-color-primary mx-5 mb-6">
   <br>
 </section>
