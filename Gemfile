@@ -62,3 +62,9 @@ gem 'bulma_form_builder'
 
 # FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record.
 gem 'friendly_id', '~> 5.4.0'
+
+# Simple, internationalized and DRY page titles and headings for Rails.
+gem 'page_title_helper'
+
+# Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
+gem 'meta-tags'

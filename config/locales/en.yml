@@ -31,3 +31,9 @@
 
 en:
   hello: "Hello world"
+  titles:
+    base: "%{title} • MyCompany"
+  pages:
+    home:
+      title: "Welcome"
+
