@@ -15,15 +15,15 @@
         <p class="subtitle is-size-6 has-text-justified">
           <%= strip_tags(project.description) %>
         </p>
-        <p class="is-color-primary is-size-6 has-text-left">
+        <p class="tags is-color-primary is-size-6 has-text-left">
           <% if project.fieldOfEducation %>
-            Education 
+            <span class="tag is-color-primary">Education</span> 
           <% end %>
           <% if project.fieldOfWelfare %>
-            Welfare 
+            <span class="tag is-color-primary">Welfare</span>  
           <% end %>
           <% if project.fieldOfHealth %>
-            Health 
+            <span class="tag is-color-primary">Health</span>  
           <% end %>
         </p>
       </div>
