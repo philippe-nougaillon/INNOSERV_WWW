@@ -23,7 +23,7 @@
     <% end %>
   </div>
   <div class="container has-text-centered mb-6">
-    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '600', class:"is-centered", poster: @project.image + 'png', controls: true, preload: 'none' %>
+    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '600', class:"is-centered", poster: @project.image + '.png', controls: true, preload: 'none' %>
   </div>
 
   <!--TODO: agrandir le texte ci-dessous (simple_format pose problème) -->
