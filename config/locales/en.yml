@@ -36,6 +36,8 @@ en:
   pages:
     home:
       title: "Welcome"
+    about:
+      title: "About"
   projects:
     show:
       title: "%{name}"
