@@ -27,9 +27,9 @@
   </div>
 
   <!--TODO: agrandir le texte ci-dessous (simple_format pose problème) -->
-  <h1 class="content title">
+  <div class="content title">
     <%= simple_format(@project.information) %>
-  </h1>
+  </div>
 
   <% unless @project.website.blank?  %>
     <p>
