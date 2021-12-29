@@ -1,11 +1,12 @@
-<div class="container pt-6 mb-6">
+<div class="container pt-4 mb-6">
   <h1 class="title is-1 is-color-primary mt-6">
-    <%= @project.name %>
+    <%= page_title!(@project.name) %>
   </h1>
   <h2 class="subtitle is-3">
     <%= @project.description %>
   </h2>
-  <div class="tags mb-6">
+
+  <div class="tags">
     <% if @project.fieldOfEducation %>
       <p class="tag is-size-6 is-color-primary">
         Education
@@ -22,17 +23,15 @@
       </p>
     <% end %>
   </div>
-  <div class="container has-text-centered mb-6">
-    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '600', class:"is-centered", poster: @project.image + '.png', controls: true, preload: 'none' %>
+
+  <div class="box has-text-centered mb-6">
+    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '800', class:"is-centered", poster: @project.image + '.png', controls: true, preload: 'none' %>
   </div>
 
-  <!--TODO: agrandir le texte ci-dessous (simple_format pose problème) -->
-  <div class="content title">
-    <%= simple_format(@project.information) %>
-  </div>
+  <%= simple_format(@project.information, wrapper_tag: 'div', class: 'content is-size-5') %>
 
-  <% unless @project.website.blank?  %>
-    <p>
+  <% unless @project.website.blank? %>
+    <p class="is-size-6 is-color-primary">
       Website :
       <%= link_to @project.website, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
     </p>
