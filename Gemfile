@@ -68,3 +68,6 @@ gem 'page_title_helper'
 
 # Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
 gem 'meta-tags'
+
+# SitemapGenerator is the easiest way to generate Sitemaps in Ruby. 
+gem 'sitemap_generator'
