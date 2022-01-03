@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[ show edit update destroy download_subtitle_file ]
+  before_action :set_project, only: %i[ show edit update destroy download_video_file download_subtitle_file ]
 
   # GET /projects or /projects.json
   def index
@@ -56,6 +56,10 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def download_video_file
+    send_file("#{Rails.root}/public/videos/#{@project.videofile}.mp4")
   end
 
   def download_subtitle_file
