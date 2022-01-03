@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[ show edit update destroy ]
+  before_action :set_project, only: %i[ show edit update destroy download_subtitle_file_en download_subtitle_file_de download_subtitle_file_fr]
 
   # GET /projects or /projects.json
   def index
@@ -56,6 +56,18 @@ class ProjectsController < ApplicationController
       format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
       format.json { head :no_content }
     end
+  end
+
+  def download_subtitle_file_en
+    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_EN.txt")
+  end
+
+  def download_subtitle_file_de
+    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_DE.txt")
+  end
+
+  def download_subtitle_file_fr
+    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_FR.txt")
   end
 
   private

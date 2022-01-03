@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   get 'pages/home'
   get :about, to: 'pages#about'
-  resources :projects, only: :show
+  resources :projects, only: :show do
+    member do
+      get :download_subtitle_file_en
+      get :download_subtitle_file_de
+      get :download_subtitle_file_fr
+    end
+  end
 
   root 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
