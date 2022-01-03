@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_24_102450) do
+ActiveRecord::Schema.define(version: 2022_01_03_131359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,6 @@ ActiveRecord::Schema.define(version: 2021_12_24_102450) do
     t.text "information"
     t.string "website"
     t.string "videofile"
-    t.string "subTitles"
     t.boolean "fieldOfEducation", default: false, null: false
     t.boolean "fieldOfWelfare", default: false, null: false
     t.boolean "fieldOfHealth", default: false, null: false
