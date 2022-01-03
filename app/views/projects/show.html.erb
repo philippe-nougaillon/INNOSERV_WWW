@@ -43,13 +43,11 @@
       Download :
     </p>
     <ul class="is-size-6">
-      <li> Videofile :
-        <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
+      <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
+        <li> Videofile :
           <%= link_to @project.videofile, download_video_file_project_path %>
-        <% else %>
-          <%= "'public/videos/#{@project.videofile}.mp4' video file missing" %>
-        <% end %>
-      </li>
+        </li>
+      <% end %>
       <li> Subtitles :
         <ul class="is-size-6">
         <% if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.txt") %>

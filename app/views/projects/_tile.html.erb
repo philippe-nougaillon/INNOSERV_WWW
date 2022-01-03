@@ -26,9 +26,6 @@
             <span class="tag is-color-primary">Health</span>  
           <% end %>
         </p>
-        <% unless FileTest.exist?("public/videos/#{project.videofile}.mp4") %>
-          <%= "'public/videos/#{project.videofile}.mp4' video file missing" %>
-        <% end %>
       </div>
     <% end %>
   </article>
