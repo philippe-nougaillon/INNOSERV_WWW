@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[ show edit update destroy download_subtitle_file_en download_subtitle_file_de download_subtitle_file_fr]
+  before_action :set_project, only: %i[ show edit update destroy download_subtitle_file ]
 
   # GET /projects or /projects.json
   def index
@@ -58,16 +58,8 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def download_subtitle_file_en
-    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_EN.txt")
-  end
-
-  def download_subtitle_file_de
-    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_DE.txt")
-  end
-
-  def download_subtitle_file_fr
-    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_FR.txt")
+  def download_subtitle_file
+    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_#{params[:lang]}.txt")
   end
 
   private

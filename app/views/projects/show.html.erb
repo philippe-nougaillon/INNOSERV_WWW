@@ -38,17 +38,16 @@
   <% end %>
   <p class="is-size-6 is-color-primary">
       Download subtitles :
-      
       <% if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.txt") %>
-        <%= link_to "english version", download_subtitle_file_en_project_path %>
+        <%= link_to "english version", download_subtitle_file_project_path(lang: "EN") %>
         /
       <% end %>
       <% if FileTest.exist?("public/subtitles/#{@project.videofile}_DE.txt") %>
-        <%= link_to "deutsch subtitles", download_subtitle_file_de_project_path %>
+        <%= link_to "deutsch subtitles", download_subtitle_file_project_path(lang: "DE") %>
         /
       <% end %>
       <% if FileTest.exist?("public/subtitles/#{@project.videofile}_FR.txt") %>
-        <%= link_to "french subtitles", download_subtitle_file_fr_project_path %>
+        <%= link_to "french subtitles", download_subtitle_file_project_path(lang: "FR") %>
       <% end %>
       
     </p>
