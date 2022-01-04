@@ -1,14 +1,14 @@
-<header class="navbar is-fixed-top is-vcentered">
+<nav class="navbar is-fixed-top is-vcentered">
   <div class="container">
     <div class="navbar-brand">
       <%= link_to root_path, 'aria-label': 'logo' do %>
-        <%= image_tag 'logo.png', width: '25%', height: '25%', class:'mt-1', alt: 'logo INNOSERV' %>
+        <%= image_tag 'logo.png', width: '25%', height: '25%', class: 'mt-3 ml-4', alt: 'logo INNOSERV' %>
       <% end %>
-      <span class="navbar-burger" data-target="navbarMenuHeroC">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroC">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
     <div id="navbarMenuHeroC" class="navbar-menu">
       <div class="navbar-end">
@@ -16,12 +16,10 @@
             root_path, 
             class: "navbar-item is-color-primary" 
         %>
-        <div class="navbar-item has-text-weight-bold">|</div>
         <%= link_to "Videos",
             root_path(anchor: "videos"),
             class: "navbar-item is-color-primary" 
         %>
-        <div class="navbar-item has-text-weight-bold">|</div>
         <%= link_to "About",
             about_path, 
             class: "navbar-item is-color-primary" 
@@ -29,4 +27,4 @@
       </div>
     </div>
   </div>
-</header>
+</nav>

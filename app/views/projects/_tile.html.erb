@@ -3,9 +3,9 @@
     <%= link_to project do %>
       <figure class="image">
         <% if FileTest.exist?('app/assets/images/' + project.image + '.png') %>
-          <%= image_tag project.image + '.png', width: '100%', height: '100%', alt: "image du projet '#{ project.name }'" %>
+          <%= image_tag project.image + '.png', width: '100%', height: '100%', alt: "image du projet '#{ project.name }'", loading: 'lazy' %>
         <% else %>
-          <%= image_tag 'Inno-background.png', width: '100%', height: '100%', alt: "image de remplacement du projet '#{ project.name }'" %>
+          <%= image_tag 'Inno-background.png', width: '100%', height: '100%', alt: "image de remplacement du projet '#{ project.name }'", loading: 'lazy' %>
         <% end %>
       </figure>
       <div class="pt-3">

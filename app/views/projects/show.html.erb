@@ -1,6 +1,6 @@
 <div class="pt-4 mb-6">
   <section class="hero is-fullheight is-background-color-secondary">
-    <div class="container pt-4">
+    <div class="container is-fluid pt-4">
       <h1 class="title is-1 is-color-primary mt-6">
         <%= page_title!(@project.name) %>
       </h1>
@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <div class="container mb-6">
+  <div class="container is-fluid mb-6">
     <%= simple_format(@project.information, wrapper_tag: 'div', class: 'content is-size-5') %>
 
     <% unless @project.website.blank? %>
@@ -42,7 +42,7 @@
       <div class="content">
         <ul class="is-size-5">
           <li>
-            <%= link_to @project.website, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
+            <%= link_to URI.parse(@project.website).host, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
           </li>
         </ul>
       </div>
