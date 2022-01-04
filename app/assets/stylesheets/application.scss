@@ -48,6 +48,35 @@ a:hover {
   background-color: transparent !important;
 }
 
+.project-tile{
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  .title{
+      transition: color .5s;
+  }
+
+  img{
+      opacity: 0.9;
+      border-radius: 6px;
+      transition: transform .5s, opacity .5s;
+  }
+}
+
+.project-tile:hover{
+
+  .title{
+      color: $other-color-primary !important;
+  }
+  img{
+      transform: scale(1.07);
+      opacity: 1;
+  }
+  // box-shadow: 5px 6px 6px 2px $other-color-secondary;
+  transform: scale(1.03)
+}
+
 /// FONT AWESOME ICON ///
 
 .fab, .fas{
