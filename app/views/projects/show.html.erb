@@ -39,16 +39,20 @@
 
   <div class="content is-color-primary">
 
-    <p class="is-size-6">
-      Download :
-    </p>
-    <ul class="is-size-6">
+    <h3 class="title is-3 mt-6 is-color-primary">
+      Download
+    </h3>
+    <ul class="is-size-5">
       <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
-        <li> Videofile :
-          <%= link_to @project.videofile, download_video_file_project_path %>
+        <li> Videofile
+          <ul class="is-size-6">
+            <li>
+              <%= link_to @project.videofile, download_video_file_project_path %>
+            </li>
+          </ul>
         </li>
       <% end %>
-      <li> Subtitles :
+      <li> Subtitles
         <ul class="is-size-6">
         <% if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.txt") %>
           <li>
