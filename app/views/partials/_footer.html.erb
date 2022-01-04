@@ -1,60 +1,59 @@
-<div class="is-divider m-5">
-</div>
-<div class="columns is-vcentered mx-4 is-desktop">
-  <div class="column is-vcentered ml-6">
-    <a href="https://www.facebook.com/innoserv" target="_blank" rel="noreferrer noopener" aria-label="Facebook">
-      <i class="fab fa-facebook fa-2x mx-3"></i>
-    </a>
-    <br>
-    <a href="https://twitter.com/INNOSERVproject" target="_blank" rel="noreferrer noopener" aria-label="Twitter">
-      <i class="fab fa-twitter fa-2x mx-3"></i>
-    </a>
-    <br>
-    <a href="https://www.youtube.com/channel/UCX-SE-AvqteYfgv1cNA0o2w" target="_blank" rel="noreferrer noopener" aria-label="Youtube">
-      <i class="fab fa-youtube fa-2x mx-3"></i>
-    </a>
-  </div>
-
-  <div class="column">
-    <ul class="menu-list is-size-6">
-      <li class="has-text-weight-bold">
+<footer class="is-background-color-secondary pt-6">
+  <%
+=begin%>
+ <div class="is-divider is-background-color-primary m-6">
+  </div> 
+<%
+=end%>
+  <div class="columns is-centered mx-4 is-desktop">
+    <div class="column has-text-centered is-4">
+      <%= link_to root_path, 'aria-label': 'logo' do %>
+        <%= image_tag 'logo.png', class: 'mb-6', width: '75%', height: '75%', alt: 'logo INNOSERV' %>
+      <% end %>
+      <div class="columns is-vcentered mx-4 has-text-weight-bold is-size-5 is-desktop">
+        <div class="column has-text-centered">
           <%= link_to "Home",
             root_path, 
-            class: "navbar-item is-color-primary" 
-        %>
-      </li>
-      <li class="has-text-weight-bold">
+            class: "is-color-primary has-text-centered" 
+          %>
+        </div>
+        |
+        <div class="column has-text-centered">
           <%= link_to "Videos",
             root_path(anchor: "videos"),
-            class: "navbar-item is-color-primary" 
-        %>
-      </li>
-      <li class="has-text-weight-bold">
-        <%= link_to "About",
+            class: "is-color-primary" 
+          %>
+        </div>
+        |
+        <div class="column has-text-centered">
+          <%= link_to "About",
             about_path, 
-            class: "navbar-item is-color-primary" 
-        %>
-      </li>
-    </ul>
-  </div>
-  <div class="column">
-    <%= link_to root_path, 'aria-label': 'logo' do %>
-      <%= image_tag 'logo.png', width: '75%', height: '75%', alt: 'logo INNOSERV' %>
+            class: "is-color-primary" 
+          %>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+    </div>
+    <div class="column is-one-fifth has-text-centered mr-6">
+    <%= link_to ("https://cordis.europa.eu/project/id/290542"), 'aria-label': 'cordis.europa.eu' do %>
+      <%= image_tag 'FP7.webp', class:'mb-5', width: '100%', height: '100%', alt: 'Logo European Commission European research Area / Seventh Framework Programme, funded under Socio-economic Sciences & Humanities', loading: 'lazy' %>
     <% end %>
-  </div>
-  <div class="column">
-    <%= mail_to 'contact@innoserv-project.eu', 'contact@innoserv-project.eu' %>
+    <a href="https://www.facebook.com/innoserv" target="_blank" rel="noreferrer noopener" aria-label="Facebook">
+        <em class="fab fa-facebook fa-2x mx-3"></em>
+      </a>
+      <a href="https://twitter.com/INNOSERVproject" target="_blank" rel="noreferrer noopener" aria-label="Twitter">
+        <em class="fab fa-twitter fa-2x mx-3"></em>
+      </a>
+      <a href="https://www.youtube.com/channel/UCX-SE-AvqteYfgv1cNA0o2w" target="_blank" rel="noreferrer noopener" aria-label="Youtube">
+        <em class="fab fa-youtube fa-2x mx-3"></em>
+      </a>
+    </div>
   </div>
 
-  <div class="column mr-6">
-  <%= link_to ("https://cordis.europa.eu/project/id/290542"), 'aria-label': 'cordis.europa.eu' do %>
-    <%= image_tag 'FP7_2011.gif', width: '100%', height: '100%', alt: 'Logo European Commission European research Area / Seventh Framework Programme, funded under Socio-economic Sciences & Humanities', loading: 'lazy' %>
-  <% end %>
-  </div>
-</div>
-
-<section class="hero is-small is-background-color-primary mx-5 mb-6 p-1">
-  <p class="has-text-white">
-    By INNOSERV (2012-2014). This project (grant agreement nr. 290542) is supported under the Socio-economic and Humanities Programme of FP7. 
-  </p>
-</section>
+  <section class="hero is-small mx-5 mt-6 p-1">
+    <p class="">
+      By INNOSERV (2012-2014). This project (grant agreement nr. 290542) is supported under the Socio-economic and Humanities Programme of FP7. 
+    </p>
+  </section>
+</footer>

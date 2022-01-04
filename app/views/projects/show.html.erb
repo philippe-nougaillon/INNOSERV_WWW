@@ -1,77 +1,88 @@
-<div class="container pt-4 mb-6">
-  <h1 class="title is-1 is-color-primary mt-6">
-    <%= page_title!(@project.name) %>
-  </h1>
-  <h2 class="subtitle is-3">
-    <%= @project.description %>
-  </h2>
+<div class="pt-4 mb-6">
+  <section class="hero is-fullheight is-background-color-secondary">
+    <div class="container pt-4">
+      <h1 class="title is-1 is-color-primary mt-6">
+        <%= page_title!(@project.name) %>
+      </h1>
+      <h2 class="subtitle is-3">
+        <%= @project.description %>
+      </h2>
 
-  <div class="tags">
-    <% if @project.fieldOfEducation %>
-      <p class="tag is-size-6 is-color-primary">
-        Education
-      </p>
-    <% end %>
-    <% if @project.fieldOfWelfare %>
-      <p class="tag is-size-6 is-color-primary">
-        Welfare
-      </p>
-    <% end %>
-    <% if @project.fieldOfHealth %>
-      <p class="tag is-size-6 is-color-primary">
-        Health
-      </p>
-    <% end %>
+      <div class="tags">
+        <% if @project.fieldOfEducation %>
+          <p class="tag is-size-6 is-color-primary">
+            Education
+          </p>
+        <% end %>
+        <% if @project.fieldOfWelfare %>
+          <p class="tag is-size-6 is-color-primary">
+            Welfare
+          </p>
+        <% end %>
+        <% if @project.fieldOfHealth %>
+          <p class="tag is-size-6 is-color-primary">
+            Health
+          </p>
+        <% end %>
+      </div>
+
+      <div class="has-text-centered mb-6 pb-6">
+        <%= video_tag "/videos/#{@project.videofile}.mp4", width: '800', class:"is-centered", poster: @project.image + '.png', controls: true, preload: 'none' %>
+      </div>
+    </div>
   </div>
 
-  <div class="box has-text-centered mb-6">
-    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '800', class:"is-centered", poster: @project.image + '.png', controls: true, preload: 'none' %>
-  </div>
+  <div class="container mb-6">
+    <%= simple_format(@project.information, wrapper_tag: 'div', class: 'content is-size-5') %>
 
-  <%= simple_format(@project.information, wrapper_tag: 'div', class: 'content is-size-5') %>
+    <% unless @project.website.blank? %>
+      <h3 class="title is-3 mt-6 is-color-primary">
+        Website
+      </h3>
+      <div class="content">
+        <ul class="is-size-5">
+          <li>
+            <%= link_to @project.website, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
 
-  <% unless @project.website.blank? %>
-    <p class="is-size-6 is-color-primary mb-4">
-      Website :
-      <%= link_to @project.website, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
-    </p>
-  <% end %>
-
-  <div class="content is-color-primary">
-
-    <h3 class="title is-3 mt-6 is-color-primary">
-      Download
-    </h3>
-    <ul class="is-size-5">
-      <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
-        <li> Videofile
+    <div class="content is-color-primary">
+      <h3 class="title is-3 mt-6 is-color-primary">
+        Download
+      </h3>
+      <ul class="is-size-5">
+        <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
+          <li> Videofile
+            <ul class="is-size-6">
+              <li>
+                <%= link_to "#{@project.videofile}.mp4", download_video_file_project_path %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
+        <li> Subtitles
           <ul class="is-size-6">
+          <%- if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.txt") %>
             <li>
-              <%= link_to @project.videofile, download_video_file_project_path %>
+            <%= link_to "English", download_subtitle_file_project_path(lang: "EN") %>
             </li>
+          <% end %>
+          <% if FileTest.exist?("public/subtitles/#{@project.videofile}_DE.txt") %>
+            <li>
+            <%= link_to "Deutsch", download_subtitle_file_project_path(lang: "DE") %>
+            </li>
+          <% end %>
+          <% if FileTest.exist?("public/subtitles/#{@project.videofile}_FR.txt") %>
+            <li>
+            <%= link_to "French", download_subtitle_file_project_path(lang: "FR") %>
+            </li>
+          <% end %>
           </ul>
         </li>
-      <% end %>
-      <li> Subtitles
-        <ul class="is-size-6">
-        <% if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.txt") %>
-          <li>
-          <%= link_to "english", download_subtitle_file_project_path(lang: "EN") %>
-          </li>
-        <% end %>
-        <% if FileTest.exist?("public/subtitles/#{@project.videofile}_DE.txt") %>
-          <li>
-          <%= link_to "deutsch", download_subtitle_file_project_path(lang: "DE") %>
-          </li>
-        <% end %>
-        <% if FileTest.exist?("public/subtitles/#{@project.videofile}_FR.txt") %>
-          <li>
-          <%= link_to "french", download_subtitle_file_project_path(lang: "FR") %>
-          </li>
-        <% end %>
-        </ul>
-      </li>
-    </ul>
+      </ul>
+    </div>
   </div>
   
 </div>
