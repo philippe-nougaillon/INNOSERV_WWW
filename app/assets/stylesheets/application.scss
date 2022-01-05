@@ -24,7 +24,6 @@ $other-color-primary : rgb(189, 46, 90) ;
 $other-color-secondary : rgb(238, 220, 186);
 
 $slightblack : #272223;
-
 /// text color
 .is-color-primary{
   color: $color-primary !important;
@@ -32,6 +31,10 @@ $slightblack : #272223;
 
 .is-color-secondary{
   color: $color-secondary !important;
+}
+
+.is-slightblack{
+  color: $slightblack !important;
 }
 
 /// background color
@@ -46,6 +49,27 @@ $slightblack : #272223;
 
 a:hover {
   background-color: transparent !important;
+}
+
+.button{
+  transition-property: background-color,color;
+  transition-duration: .2s;
+
+  &.is-background-color-primary.is-outlined{
+    background-color: transparent;
+    border-color: $other-color-primary;
+    color: #000;
+  }
+
+  &:hover{
+    background-color: none; // this only applies the transition, with the color given by bulma
+  
+    &.is-background-color-primary.is-outlined{
+      background-color: $other-color-primary;
+      border-color: transparent;
+      color: #fff;
+    }
+  }
 }
 
 .project-tile{

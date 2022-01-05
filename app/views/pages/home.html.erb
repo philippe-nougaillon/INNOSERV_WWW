@@ -1,32 +1,19 @@
-<section class="hero is-background-color-primary is-fullheight">
-
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    <div class="container has-text-centered mt-6">
-      <h1 class="title is-1">
-        INNOSERV
-      </h1>
-      <h2 class="subtitle is-2 has-text-white mt-3">
-        <%= 'Social Services Innovation'.upcase %>
-      </h2>
-      <figure class="image is-16by9 m-6">
-        <iframe class="has-ratio" src="https://www.youtube.com/embed/quQ6qHePN7s" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </figure>
-    </div>
-  </div>
-</section>
-
 <section class="hero is-medium is-background-color-secondary">
   <div class="hero-body ml-4">
-    <h3 class="title is-3 is-color-primary">
-      About INNOSERV
-    </h3>
-    <h4 class="title is-4 mt-3">
-      INNOSERV is a project developing an EU wide research agenda to evaluate innovation in the field of social
-      services (especially for health, education and welfare services). 
-      This will help define future research activities.
-    </h4>
+    <div class="has-text-centered mb-6">
+      <h1 class="title is-1 is-slightblack">
+        INNOSERV
+      </h1>
+      <h2 class="subtitle is-2 is-color-primary mt-3">
+        <%= 'Social Services Innovation'.upcase %>
+      </h2>
+    </div>
     <div class="content is-size-5">
+      <h3 class="title is-4 mt-3">
+        INNOSERV is a project developing an EU wide research agenda to evaluate innovation in the field of social
+        services (especially for health, education and welfare services). 
+        This will help define future research activities.
+      </h3>
         INNOSERV responds to the FP7-Cooperation call FP7-SSH-2011-3 for a ‘support action concerning a social platform on innovative social services.’
         <br>
         Answering the objectives of the call, the INNOSERV project will:
@@ -37,8 +24,26 @@
         </ul>
         Publications will summarise the results of the debate and formulate future research needs.
     </div>
+    <div class="container has-text-centered pt-6">
+      <%= button_to "Learn More", 
+          about_path,
+          method: :get,
+          class: "button is-uppercase has-text-weight-bold is-background-color-primary is-medium is-centered is-outlined" 
+      %>
+    </div>
   </div>
 </section>
+
+<section class="hero is-small is-background-color-primary has-text-centered">
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <figure class="image is-16by9">
+      <%= video_tag "/videos/Trailer INNOSERV.mp4", class:"is-centered has-ratio", poster: 'Trailer-INNOSERV.webp', controls: true, preload: 'none'%>
+    </figure>
+  </div>
+</section>
+
 
 <%= render partial: 'projects/projects_list', locals: { project: @projects} %>
 <br>
