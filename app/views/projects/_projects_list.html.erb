@@ -1,10 +1,11 @@
-<div id="videos", style="height: 56px;">
-</div>
+<div class="is-background-color-secondary">
+  <div id="visual_examples", style="height: 56px;">
+  </div>
 
-<h3 class="title is-3 has-text-centered my-6 is-color-primary">
-  20 examples of innovative services
-</h3>
+  <h2 class="title is-2 has-text-centered my-6 is-color-primary">
+    Visual Examples
+  </h2>
 
-<div class="columns is-multiline mx-4 mt-6 is-desktop is-background-color-secondary">
-  <%= render partial: 'projects/tile', collection: @projects, as: :project %>
-</div>
+  <div class="columns is-multiline mx-4 mt-6 is-desktop">
+    <%= render partial: 'projects/tile', collection: @projects, as: :project %>
+  </div>

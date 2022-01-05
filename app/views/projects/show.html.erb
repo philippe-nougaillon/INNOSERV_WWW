@@ -32,23 +32,21 @@
     </div>
   </div>
 
-  <div class="container is-fluid mb-6">
-    <%= simple_format(@project.information, wrapper_tag: 'div', class: 'content is-size-5') %>
+  <div class="container content is-large is-fluid mb-6">
+    <%= simple_format(@project.information, wrapper_tag: 'div', class: 'is-size-5') %>
 
     <% unless @project.website.blank? %>
       <h3 class="title is-3 mt-6 is-color-primary">
         Website
       </h3>
-      <div class="content">
-        <ul class="is-size-5">
-          <li>
-            <%= link_to URI.parse(@project.website).host, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
-          </li>
-        </ul>
-      </div>
+      <ul class="is-size-5">
+        <li>
+          <%= link_to URI.parse(@project.website).host, @project.website, target: '_blank', rel:"noreferrer noopener", 'aria-label': 'Project\'s Website' %>
+        </li>
+      </ul>
     <% end %>
 
-    <div class="content is-color-primary">
+    <div class="is-color-primary">
       <h3 class="title is-3 mt-6 is-color-primary">
         Download
       </h3>
@@ -56,7 +54,7 @@
         <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
           <li> Video file
             <ul class="is-size-6">
-              <li>
+              <li style="text-decoration: underline;">
                 <%= link_to "#{@project.videofile}.mp4", download_video_file_project_path %>
               </li>
             </ul>
@@ -65,17 +63,17 @@
         <li> Subtitles
           <ul class="is-size-6">
           <%- if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.txt") %>
-            <li>
+            <li style="text-decoration: underline;">
             <%= link_to "English", download_subtitle_file_project_path(lang: "EN") %>
             </li>
           <% end %>
           <% if FileTest.exist?("public/subtitles/#{@project.videofile}_DE.txt") %>
-            <li>
+            <li style="text-decoration: underline;">
             <%= link_to "Deutsch", download_subtitle_file_project_path(lang: "DE") %>
             </li>
           <% end %>
           <% if FileTest.exist?("public/subtitles/#{@project.videofile}_FR.txt") %>
-            <li>
+            <li style="text-decoration: underline;">
             <%= link_to "French", download_subtitle_file_project_path(lang: "FR") %>
             </li>
           <% end %>

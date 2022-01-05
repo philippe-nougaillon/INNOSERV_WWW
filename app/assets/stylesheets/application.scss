@@ -72,6 +72,14 @@ a:hover {
   }
 }
 
+div.content p, div.content ul li{
+  line-height: 25px;
+}
+
+.navbar{
+  box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
+}
+
 .project-tile{
 
   transition: all 0.2s ease;
