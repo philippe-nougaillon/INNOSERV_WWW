@@ -54,7 +54,7 @@
       </h3>
       <ul class="is-size-5">
         <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
-          <li> Videofile
+          <li> Video file
             <ul class="is-size-6">
               <li>
                 <%= link_to "#{@project.videofile}.mp4", download_video_file_project_path %>
