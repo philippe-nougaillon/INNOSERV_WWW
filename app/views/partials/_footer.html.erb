@@ -7,28 +7,28 @@
         <%= image_tag 'logo.png', class: 'mb-6 mr-6', width: '65%', height: '65%', alt: 'logo INNOSERV' %>
       <% end %>
       <div class="columns is-vcentered mx-4 has-text-weight-bold is-size-5 is-desktop">
-        <div class="column has-text-centered">
+        <div class="column has-text-centered px-4">
           <%= link_to "Home",
             root_path, 
             class: "is-color-primary has-text-centered" 
           %>
         </div>
         |
-        <div class="column has-text-centered">
+        <div class="column has-text-centered is-6 px-4">
           <%= link_to "Visual Examples",
             root_path(anchor: "visual_examples"),
             class: "is-color-primary" 
           %>
         </div>
         |
-        <div class="column has-text-centered">
+        <div class="column has-text-centered px-4">
           <%= link_to "About",
             about_path, 
             class: "is-color-primary" 
           %>
         </div>
         |
-        <div class="column has-text-centered">
+        <div class="column has-text-centered px-4">
           <%= link_to "Contact",
             contact_path, 
             class: "is-color-primary" 

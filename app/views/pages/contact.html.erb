@@ -1,21 +1,28 @@
 <%= form_tag do %>
-  <h1>Contact</h1>
-  <div class="field">
-    <%= label_tag :email, 'Your Email' %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div class="field">
-    <%= label_tag :subject, 'Subject' %>
-    <%= text_field_tag :subject, params[:subject] %>
-  </div>
-  <div class="field">
-    <%= label_tag :content, 'Content' %>
-    <%= text_area_tag :content, params[:content] %>
-  </div>
-  <div class="action">
-    <%= submit_tag "Send" %>
-  </div>
+  <section class="hero content is-background-color-secondary is-medium pb-6">
+    <div style="height:80px;">
+    </div>
+    <div class="hero-body has-text-centered">
+      <p class="title is-1 has-text-centered is-color-primary mb-6">
+        Contact
+      </p>
+      <p class="subtitle is-3">
+        You have a question or you would like our website support to contact you?
+      </p>
+      <p class="subtitle is-4">
+        Fill out the form below and we will respond as soon as possible.
+      </p>
+
+    <div class="column is-half is-offset-one-quarter has-text-left">
+      <%= render 'partials/notification' %>
+      <%= text_field_tag :email, params[:email], class:'input mb-3', placeholder: 'Email*', required: true %>
+      <%= text_field_tag :subject, params[:subject], class:'input mb-3', placeholder: 'Subject*', required: true %>
+      <%= text_area_tag :content, params[:content], rows: 10, class:'textarea mb-3', placeholder: 'Content*', required: true %>
+      <p class="mb-5">* : must be filled</p>
+      <div class="action">
+        <%= submit_tag "Submit", class:'button is-background-color-primary is-medium is-outlined' %>
+      </div>
+    </div>
+    </div>
+  </section>
 <% end %>
-
-
-<%= mail_to 'contact@innoserv-project.eu', 'contact@innoserv-project.eu' %>

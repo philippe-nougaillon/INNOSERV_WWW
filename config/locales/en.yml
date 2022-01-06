@@ -38,6 +38,8 @@ en:
       title: "Welcome"
     about:
       title: "About"
+    contact:
+      title: "Contact"
   projects:
     show:
       title: "%{name}"

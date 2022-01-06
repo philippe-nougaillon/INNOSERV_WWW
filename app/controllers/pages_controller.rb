@@ -8,7 +8,12 @@ class PagesController < ApplicationController
   def contact
   end
   def contact_submit
-    ContactMailer.submitted(params[:email], params[:subject], params[:content]).deliver_now
-    redirect_to contact_path, notice: 'Contact sended'
+    if params[:email] =~ URI::MailTo::EMAIL_REGEXP
+      ContactMailer.submitted(params[:email], params[:subject], params[:content]).deliver_now
+      redirect_to contact_path, notice: 'Contact sended'
+    else
+      redirect_to contact_path, alert: 'Invalid Email Adress'
+    end
+
   end
 end
