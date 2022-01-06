@@ -51,6 +51,15 @@
         Download
       </h3>
       <ul class="is-size-5">
+        <% if FileTest.exist?("public/final_reports/#{@project.videofile}_final.pdf") %>
+          <li> Final Report
+            <ul class="is-size-6">
+              <li style="text-decoration: underline;">
+                <%= link_to "#{@project.videofile}_final.pdf", download_final_report_file_project_url %>
+              </li>
+            </ul>
+          </li>
+        <% end %>
         <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
           <li> Video file
             <ul class="is-size-6">

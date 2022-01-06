@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get :about, to: 'pages#about'
   resources :projects, only: :show do
     member do
+      get :download_final_report_file
       get :download_video_file
       get :download_subtitle_file
     end
