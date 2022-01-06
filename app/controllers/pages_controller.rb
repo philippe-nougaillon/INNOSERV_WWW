@@ -12,7 +12,7 @@ class PagesController < ApplicationController
       ContactMailer.submitted(params[:email], params[:subject], params[:content]).deliver_now
       redirect_to contact_path, notice: 'Contact sended'
     else
-      redirect_to contact_path, alert: 'Invalid Email Adress'
+      redirect_to contact_path, alert: 'This email is invalid'
     end
 
   end

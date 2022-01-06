@@ -14,8 +14,16 @@
       </p>
 
     <div class="column is-half is-offset-one-quarter has-text-left">
-      <%= render 'partials/notification' %>
-      <%= text_field_tag :email, params[:email], class:'input mb-3', placeholder: 'Email*', required: true %>
+      <div class="mb-3">
+        <%= text_field_tag :email, params[:email], class:'input', placeholder: 'Email*', required: true %>
+        <% if alert %>
+          <dl>
+            <li class="has-text-danger is-size-6">
+              <%= alert %>
+            </li>
+          </dl>
+        <% end %>
+      </div>
       <%= text_field_tag :subject, params[:subject], class:'input mb-3', placeholder: 'Subject*', required: true %>
       <%= text_area_tag :content, params[:content], rows: 10, class:'textarea mb-3', placeholder: 'Content*', required: true %>
       <p class="mb-5">* : must be filled</p>
