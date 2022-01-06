@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'pages/home'
-  get :about, to: 'pages#about'
-  get :contact, to: 'pages#contact'
+
+  controller :pages do
+    get 'pages/home'
+    get :about, to: 'pages#about'
+    get :contact, to: 'pages#contact'
+    post :contact, to: 'pages#contact_submit'
+  end
   resources :projects, only: :show do
     member do
       get :download_final_report_file

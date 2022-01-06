@@ -1,1 +1,21 @@
+<%= form_tag do %>
+  <h1>Contact</h1>
+  <div class="field">
+    <%= label_tag :email, 'Your Email' %>
+    <%= text_field_tag :email, params[:email] %>
+  </div>
+  <div class="field">
+    <%= label_tag :subject, 'Subject' %>
+    <%= text_field_tag :subject, params[:subject] %>
+  </div>
+  <div class="field">
+    <%= label_tag :content, 'Content' %>
+    <%= text_area_tag :content, params[:content] %>
+  </div>
+  <div class="action">
+    <%= submit_tag "Send" %>
+  </div>
+<% end %>
+
+
 <%= mail_to 'contact@innoserv-project.eu', 'contact@innoserv-project.eu' %>
