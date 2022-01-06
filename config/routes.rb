@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/home'
   get :about, to: 'pages#about'
+  get :contact, to: 'pages#contact'
   resources :projects, only: :show do
     member do
       get :download_final_report_file

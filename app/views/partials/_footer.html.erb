@@ -4,7 +4,7 @@
   <div class="columns is-centered mx-4 is-desktop">
     <div class="column has-text-centered is-4">
       <%= link_to root_path, 'aria-label': 'logo' do %>
-        <%= image_tag 'logo.png', class: 'mb-6', width: '75%', height: '75%', alt: 'logo INNOSERV' %>
+        <%= image_tag 'logo.png', class: 'mb-6 mr-6', width: '65%', height: '65%', alt: 'logo INNOSERV' %>
       <% end %>
       <div class="columns is-vcentered mx-4 has-text-weight-bold is-size-5 is-desktop">
         <div class="column has-text-centered">
@@ -14,7 +14,7 @@
           %>
         </div>
         |
-        <div class="column is-6 has-text-centered">
+        <div class="column has-text-centered">
           <%= link_to "Visual Examples",
             root_path(anchor: "visual_examples"),
             class: "is-color-primary" 
@@ -24,6 +24,13 @@
         <div class="column has-text-centered">
           <%= link_to "About",
             about_path, 
+            class: "is-color-primary" 
+          %>
+        </div>
+        |
+        <div class="column has-text-centered">
+          <%= link_to "Contact",
+            contact_path, 
             class: "is-color-primary" 
           %>
         </div>
@@ -48,7 +55,7 @@
   </div>
 
   <section class="hero is-small mx-5 mt-6 p-1">
-    <p class="">
+    <p>
       By INNOSERV (2012-2014). This project (grant agreement nr. 290542) is supported under the Socio-economic and Humanities Programme of FP7. 
     </p>
   </section>
