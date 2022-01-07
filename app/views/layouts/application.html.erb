@@ -35,8 +35,12 @@
 
   <body>
     <%= render 'partials/navbar' %>
-    <%= yield %>
-    <%= render partial: 'partials/footer' %>
+    <div class="is-background-color-secondary">
+      <div id="navbar-spacing" style="height:<%= request.variant.include?(:phone) ? '52' : '56' %>px;">
+      </div>
+      <%= yield %>
+      <%= render partial: 'partials/footer' %>
+    </div>
   </body>
 
   <%= render 'partials/scripts' %>

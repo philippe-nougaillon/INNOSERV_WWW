@@ -1,44 +1,40 @@
-<section class="is-background-color-secondary">
-  <div style="height:<%= request.variant.include?(:phone) ? '56' : '52' %>px;">
-  </div>
-  <% if notice %>
-    <section>
-      <div class="notification has-text-centered is-success is-light">
-        <button class="delete"></button>
-        <p class="notice is-size-4">
-          <%= notice %>
-        </p>
-      </div>
-    </section>
-  <% end %>
-  <div class="container content il-large is-fluid has-text-centered">
-    <h1 class="title is-1 has-text-centered is-color-primary my-6">
-      Contact
-    </h1>
-    <p class="subtitle is-4 mt-3 has-text-weight-semibold">
-      You have a question or you would like our website support to contact you?
-    </p>
-    <p class="is-size-5">
-      Fill out the form below and we will respond as soon as possible.
-    </p>
+<% if notice %>
+  <section>
+    <div class="notification has-text-centered is-success is-light mt-6">
+      <button class="delete"></button>
+      <p class="notice is-size-4">
+        <%= notice %>
+      </p>
+    </div>
+  </section>
+<% end %>
+<div class="container content il-large is-fluid has-text-centered">
+  <h1 class="title is-1 is-color-primary my-6">
+    Contact
+  </h1>
+  <p class="subtitle is-4 mt-3 has-text-weight-semibold">
+    You have a question or you would like our IT support to contact you?
+  </p>
+  <p class="is-size-5">
+    Fill out the form below and we will respond as soon as possible.
+  </p>
 
-  <%= form_tag do %>
-    <div class="column is-half is-offset-one-quarter has-text-left">
-      <div class="mb-3">
-        <%= text_field_tag :email, params[:email], class:'input', placeholder: 'Email*', required: true %>
-        <% if alert %>
-          <p class="has-text-danger is-size-6 mt-2 mb-5">
-            <%= alert %>
-          </p>
-        <% end %>
-      </div>
-      <%= text_field_tag :subject, params[:subject], class:'input mb-3', placeholder: 'Subject*', required: true %>
-      <%= text_area_tag :content, params[:content], rows: 10, class:'textarea mb-3', placeholder: 'Content*', required: true %>
-      <p class="mb-5">* : must be filled</p>
-      <div class="action mb-6">
-        <%= submit_tag "Submit", class:'button is-background-color-primary is-medium is-outlined' %>
-      </div>
+<%= form_tag do %>
+  <div class="column is-half is-offset-one-quarter has-text-left">
+    <div class="mb-3">
+      <%= text_field_tag :email, params[:email], class:'input', placeholder: 'Email*', required: true %>
+      <% if alert %>
+        <p class="has-text-danger is-size-6 mt-2 mb-5">
+          <%= alert %>
+        </p>
+      <% end %>
     </div>
+    <%= text_field_tag :subject, params[:subject], class:'input mb-3', placeholder: 'Subject*', required: true %>
+    <%= text_area_tag :content, params[:content], rows: 10, class:'textarea mb-3', placeholder: 'Content*', required: true %>
+    <p class="mb-5">* : must be filled</p>
+    <div class="action mb-6">
+      <%= submit_tag "Submit", class:'button is-background-color-primary is-medium is-outlined' %>
     </div>
-  <% end %>
-</section>
+  </div>
+  </div>
+<% end %>

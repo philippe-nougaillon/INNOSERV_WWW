@@ -1,11 +1,9 @@
-<div class="is-background-color-secondary">
-  <div id="visual_examples", style="height: 56px;">
-  </div>
+<div id="visual_examples" style="height:<%= request.variant.include?(:phone) ? '56' : '52' %>px;">
+</div>
+<h2 class="title is-2 has-text-centered my-6 is-color-primary">
+  Visual Examples
+</h2>
 
-  <h2 class="title is-2 has-text-centered my-6 is-color-primary">
-    Visual Examples
-  </h2>
-
-  <div class="columns is-multiline mx-4 mt-6 is-desktop">
-    <%= render partial: 'projects/tile', collection: @projects, as: :project %>
-  </div>
+<div class="columns is-multiline mx-4 mt-6 is-desktop">
+  <%= render partial: 'projects/tile', collection: @projects, as: :project %>
+</div>
