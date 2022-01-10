@@ -1,5 +1,5 @@
 <div class="container content is-large is-fluid has-text-justified">
-  <h1 class="title is-1 has-text-centered is-color-primary my-6">
+  <h1 class="title is-1 has-text-centered is-color-primary mt-6">
     <%= page_title!(@project.name) %>
   </h1>
   <h2 class="subtitle is-4 has-text-centered has-text-weight-semibold mt-3">
@@ -24,7 +24,7 @@
     <% end %>
   </div>
 
-  <div class="has-text-centered mb-6 pb-6">
+  <div class="has-text-centered mb-4 pb-6">
     <%= video_tag "/videos/#{@project.videofile}.mp4", width: '800', class:"is-centered", poster: @project.image + '.png', controls: true, preload: 'none' %>
   </div>
 

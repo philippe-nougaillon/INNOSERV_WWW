@@ -32,11 +32,11 @@
   </div>
 </div>
 
-<div class="is-background-color-primary has-text-centered p-6">
+<div class="is-background-color-primary has-text-centered <%= request.variant.include?(:phone) ? 'py-3 px-2' : 'p-6' %>">
   <h2 class="title is-2 has-text-centered is-slightblack my-6">
     Trailer
   </h2>
-  <figure class="image is-16by9 m-6">
+  <figure class="image is-16by9 <%= request.variant.include?(:phone) ? '' : 'm-6' %>">
     <%= video_tag "/videos/Trailer INNOSERV.mp4", class:"is-centered has-ratio", poster: 'Trailer-INNOSERV.webp', controls: true, preload: 'none'%>
   </figure>
 </div>
