@@ -8,11 +8,14 @@ class PagesController < ApplicationController
   def contact
   end
   def contact_submit
+    @email_error = false
     if params[:email] =~ URI::MailTo::EMAIL_REGEXP
       ContactMailer.submitted(params[:email], params[:subject], params[:content]).deliver_now
       redirect_to contact_path, notice: 'Your form has been submitted.'
     else
-      redirect_to contact_path, alert: 'This email is invalid'
+      @email_error = true
+      flash[:alert] = 'This email is invalid' 
+      render :contact, status: :unprocessable_entity
     end
 
   end
