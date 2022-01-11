@@ -67,7 +67,7 @@ class ProjectsController < ApplicationController
   end
 
   def download_subtitle_file
-    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_#{params[:lang]}.txt")
+    send_file("#{Rails.root}/public/subtitles/#{@project.videofile}_#{params[:lang]}.srt")
   end
 
   private
