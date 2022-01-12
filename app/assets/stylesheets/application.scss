@@ -17,10 +17,12 @@
 
 /// VARIABLES AND GENERAL ///
 
+* {box-sizing: border-box;}
 
-*{
+#homepage{
   scroll-behavior: smooth;
 }
+
 $color-primary : rgb(185, 35, 84) ;
 $color-secondary : rgb(244, 237, 198);
 
@@ -55,6 +57,10 @@ $slightblack : #272223;
 }
 
 
+.is-active{
+  color: $slightblack !important;
+}
+
 a:hover {
   background-color: transparent !important;
 }
@@ -84,9 +90,74 @@ div.content p, div.content ul li{
   line-height: 25px;
 }
 
-.navbar{
+
+/// NAVBAR ///
+
+#navbar{
+  overflow: hidden;
+  transition: 0.4s;
+  border-bottom: 2px solid $color-primary;
   box-shadow: 0 4px 2px -2px rgba(0,0,0,.2);
 }
+
+#navbar a {
+  float: left;
+  color: black;
+  text-decoration: none;
+}
+
+#navbar #logo {
+  margin: 15px 10px;
+  height: 60px;
+  transition: 0.4s;
+  &:hover{
+    border-top: none;
+  }
+}
+#navbar .logo-link {
+  &:hover{
+    border-top: none;
+  }
+}
+
+#navbar a#navbar-burger{
+  border-top: none;
+  &:hover{
+    border-top: none;
+  }
+  &.is-active{
+    border-top: none;
+  }
+}
+
+#navbar a:hover, #navbar a.is-active {
+  border-top: 3px solid $color-primary;
+}
+
+#navbarMenu {
+  float: right;
+}
+
+@media screen and (max-width: 580px) {
+  #navbar a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbarMenu {
+    float: none;
+  }
+}
+
+@media screen and (max-width: 1023px){
+  .navbar-menu {
+      padding: 0!important;
+  }
+}
+
+
+
+/// NAVBAR
 
 .project-tile{
 

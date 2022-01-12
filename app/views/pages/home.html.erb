@@ -1,47 +1,86 @@
-<div class="container content is-large is-fluid has-text-justified">
-  <div class="has-text-centered mb-6">
-    <h1 class="title is-1 has-text-centered is-slightblack my-6">
-      INNOSERV
-    </h1>
-    <h2 class="subtitle is-2 has-text-centered is-color-primary mt-3">
-      <%= 'Social Services Innovation'.upcase %>
+<div id="homepage">
+  <div class="container content is-large is-fluid has-text-justified">
+    <div class="has-text-centered mb-6">
+      <h1 class="title is-1 has-text-centered is-slightblack my-6">
+        INNOSERV
+      </h1>
+      <h2 class="subtitle is-2 has-text-centered is-color-primary mt-3">
+        <%= 'Social Services Innovation'.upcase %>
+      </h2>
+    </div>
+    <div class="content has-text-justified">
+      <p class="subtitle is-4 mt-3 has-text-weight-semibold">
+      INNOSERV is a project developing an EU wide research agenda to evaluate innovation in the field of social
+      services (especially for health, education and welfare services). 
+      This will help define future research activities.
+      </p>
+      <p class="is-size-5">
+        INNOSERV responds to the FP7-Cooperation call FP7-SSH-2011-3 for a ‘support action concerning a social platform on innovative social services.’
+        Answering the objectives of the call, the INNOSERV project will:
+      </p>
+      <ul class="is-size-5">
+        <li>Produce short visual examples combined with theoretical case studies of ‘innovative’ practices in the fields of health, education and welfare. These will be used to help inform discussion and debate;</li>
+        <li>Develop a web based ‘social platform’ for continuing dialogue;</li>
+        <li>Manage a multi-level discussion involving a wide range of stakeholders from research, policy making and practice communities in the EU to identify priorities for future research and development.</li>
+      </ul>
+    </div>
+    <div class="has-text-centered">
+      <%= button_to "Learn More", 
+          about_path,
+          method: :get,
+          class: "button is-uppercase has-text-weight-bold is-background-color-primary is-medium is-centered is-outlined" 
+      %>
+    </div>
+  </div>
+
+  <div id="trailer" class="is-background-color-primary has-text-centered <%= request.variant.include?(:phone) ? 'py-3 px-2' : 'p-6' %>">
+    <h2 class="title is-2 has-text-centered has-text-light my-6">
+      INNOSERV Video Trailer
     </h2>
+    <figure class="image is-16by9 <%= request.variant.include?(:phone) ? '' : 'm-6' %>">
+      <%= video_tag "/videos/Trailer INNOSERV.mp4", class:"is-centered has-ratio", poster: 'Trailer-INNOSERV.webp', controls: true, preload: 'none'%>
+    </figure>
   </div>
-  <div class="content has-text-justified">
-    <p class="subtitle is-4 mt-3 has-text-weight-semibold">
-    INNOSERV is a project developing an EU wide research agenda to evaluate innovation in the field of social
-    services (especially for health, education and welfare services). 
-    This will help define future research activities.
-    </p>
-    <p class="is-size-5">
-      INNOSERV responds to the FP7-Cooperation call FP7-SSH-2011-3 for a ‘support action concerning a social platform on innovative social services.’
-      Answering the objectives of the call, the INNOSERV project will:
-    </p>
-    <ul class="is-size-5">
-      <li>Produce short visual examples combined with theoretical case studies of ‘innovative’ practices in the fields of health, education and welfare. These will be used to help inform discussion and debate;</li>
-      <li>Develop a web based ‘social platform’ for continuing dialogue;</li>
-      <li>Manage a multi-level discussion involving a wide range of stakeholders from research, policy making and practice communities in the EU to identify priorities for future research and development.</li>
-    </ul>
-  </div>
-  <div class="has-text-centered">
-    <%= button_to "Learn More", 
-        about_path,
-        method: :get,
-        class: "button is-uppercase has-text-weight-bold is-background-color-primary is-medium is-centered is-outlined" 
-    %>
-  </div>
+
+
+  <%= render partial: 'projects/projects_list', locals: { project: @projects} %>
+  <br>
+  <br>
 </div>
 
-<div id="trailer" class="is-background-color-primary has-text-centered <%= request.variant.include?(:phone) ? 'py-3 px-2' : 'p-6' %>">
-  <h2 class="title is-2 has-text-centered has-text-light my-6">
-    INNOSERV Video Trailer
-  </h2>
-  <figure class="image is-16by9 <%= request.variant.include?(:phone) ? '' : 'm-6' %>">
-    <%= video_tag "/videos/Trailer INNOSERV.mp4", class:"is-centered has-ratio", poster: 'Trailer-INNOSERV.webp', controls: true, preload: 'none'%>
-  </figure>
-</div>
+<script>
+  window.onscroll = function() {homePageScrollFunction()};
+  
+  function homePageScrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("logo").style.margin = "0px 10px";
+      // document.getElementById("logo").style.height = "55%";
+      document.getElementById("logo").style.height = "50px";
+    } else {
+      document.getElementById("logo").style.margin = "15px 10px";
+      // document.getElementById("logo").style.height = "55%";
+      document.getElementById("logo").style.height = "60px";
+    }
 
-
-<%= render partial: 'projects/projects_list', locals: { project: @projects} %>
-<br>
-<br>
+    var home = document.getElementById("home");
+    var trailer = document.getElementById("trailer");
+    var visual_examples = document.getElementById("visual_examples");
+    if(window.location.pathname == '/'){
+      if (document.body.scrollTop < 600 && document.documentElement.scrollTop < 600) {
+        home.classList.add("is-active");
+        trailer.classList.remove("is-active");
+        visual_examples.classList.remove("is-active");
+      } 
+      else if (document.body.scrollTop < 1600 && document.documentElement.scrollTop < 1600) {
+        home.classList.remove("is-active");
+        trailer.classList.add("is-active");
+        visual_examples.classList.remove("is-active");
+      }
+      else{
+        home.classList.remove("is-active");
+        trailer.classList.remove("is-active");
+        visual_examples.classList.add("is-active");
+      }
+    }
+  }
+</script>

@@ -1,40 +1,56 @@
-<nav class="navbar is-fixed-top is-vcentered">
+<nav id="navbar" class="navbar is-fixed-top is-vcentered has-background-light">
   <div class="container">
     <div class="navbar-brand">
-      <%= link_to root_path, 'aria-label': 'logo' do %>
-        <%= image_tag 'logo.png', width: '25%', height: '25%', class:(request.variant.include?(:phone) ? 'mt-4 ml-4' : 'mt-3 ml-4' ), alt: 'logo INNOSERV' %>
-      <% end %>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenuHeroC">
+        <%= image_tag 'logo.png',class: 'image', id: 'logo', alt: 'logo INNOSERV' %>
+      <%
+=begin%>
+ <%= link_to root_path, 'aria-label': 'logo', class:'navbar-item' do %>
+        <%# class:(request.variant.include?(:phone) ? 'pt-4 pl-4' : 'pt-3 pl-4' )%>
+      <% end %> 
+<%
+=end%>
+      <a role="button" id="navbar-burger" class="navbar-burger mt-3" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div id="navbarMenuHeroC" class="navbar-menu">
+    <div id="navbarMenu" class="navbar-menu">
       <div class="navbar-end">
         <%= link_to "Home",
             root_path, 
-            class: "navbar-item is-color-primary" 
+            class: "navbar-item is-color-primary ",
+            id: "home"
         %>
         <%= link_to "Trailer",
             root_path(anchor: "trailer"),
-            class: "navbar-item is-color-primary" 
+            class: "navbar-item is-color-primary",
+            id: "trailer"
         %>
         <%= link_to "Visual Examples",
             root_path(anchor: "visual_examples"),
-            class: "navbar-item is-color-primary" 
+            class: "navbar-item is-color-primary",
+            id: "visual_examples"
         %>
         <%= link_to "About",
             about_path, 
-            class: "navbar-item is-color-primary" 
+            class: "navbar-item #{ 'is-active' if params[:action] == 'about'} is-color-primary",
+            id: "about"
         %>
         <%= link_to "Contact",
             contact_path, 
-            class: "navbar-item is-color-primary" 
+            class: "navbar-item #{ 'is-active' if params[:action] == 'contact'} is-color-primary",
+            id: "contact"
         %>
       </div>
     </div>
   </div>
-  <div class="is-background-color-primary" style="height:2px;">
-  </div>
+  <%
+=begin%>
+ <div class="is-background-color-primary" style="height:2px;">
+  </div> 
+<%
+=end%>
 </nav>
+<div class="is-background-color-primary" style="padding-top:<%= request.variant.include?(:phone) ? '79' : '95' %>px;">
+</div>
