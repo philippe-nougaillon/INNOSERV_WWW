@@ -52,19 +52,12 @@
   window.onscroll = function() {homePageScrollFunction()};
   
   function homePageScrollFunction() {
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-      document.getElementById("logo").style.margin = "0px 10px";
-      // document.getElementById("logo").style.height = "55%";
-      document.getElementById("logo").style.height = "50px";
-    } else {
-      document.getElementById("logo").style.margin = "15px 10px";
-      // document.getElementById("logo").style.height = "55%";
-      document.getElementById("logo").style.height = "60px";
-    }
+    scrollFunction();
 
-    var home = document.getElementById("home");
-    var trailer = document.getElementById("trailer");
-    var visual_examples = document.getElementById("visual_examples");
+    var home = document.getElementById("home-link");
+    var trailer = document.getElementById("trailer-link");
+    var visual_examples = document.getElementById("visual_examples-link");
+    
     if(window.location.pathname == '/'){
       if (document.body.scrollTop < 600 && document.documentElement.scrollTop < 600) {
         home.classList.add("is-active");

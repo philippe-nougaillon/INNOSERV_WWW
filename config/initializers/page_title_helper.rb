@@ -1,1 +1,1 @@
-PageTitleHelper.options[:app] = 'INNOSERV v1.0'
+PageTitleHelper.options[:app] = 'INNOSERV v1.1'
