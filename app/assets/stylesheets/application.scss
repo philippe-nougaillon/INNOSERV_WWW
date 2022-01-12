@@ -17,6 +17,10 @@
 
 /// VARIABLES AND GENERAL ///
 
+
+*{
+  scroll-behavior: smooth;
+}
 $color-primary : rgb(185, 35, 84) ;
 $color-secondary : rgb(244, 237, 198);
 
@@ -35,6 +39,10 @@ $slightblack : #272223;
 
 .is-slightblack{
   color: $slightblack !important;
+}
+
+.is-white{
+  color: #FFF !important;
 }
 
 /// background color

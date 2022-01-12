@@ -22,7 +22,7 @@
 <%= form_tag do %>
   <div class="column is-half is-offset-one-quarter has-text-left">
     <div class="mb-3">
-      <%= text_field_tag :email, params[:email], class:'input', placeholder: 'Email*', required: true %>
+      <%= text_field_tag :email, params[:email], class:(@email_error ? 'input is-danger' : 'input' ), placeholder: 'Email*', required: true %>
       <% if alert %>
         <p class="has-text-danger is-size-6 mt-2 mb-5">
           <%= alert %>
