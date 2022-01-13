@@ -16,22 +16,16 @@
         home.classList.add("is-active");
         trailer.classList.remove("is-active");
         visual_examples.classList.remove("is-active");
-        console.log(document.body.scrollTop);
-        console.log(visual_examples.classList.contains("is-active"));
       } 
       else if (document.body.scrollTop < 1600 && document.documentElement.scrollTop < 1600) {
         home.classList.remove("is-active");
         trailer.classList.add("is-active");
         visual_examples.classList.remove("is-active");
-        console.log(document.body.scrollTop);
-        console.log(visual_examples.classList.contains("is-active"));
       }
       else{
         home.classList.remove("is-active");
         trailer.classList.remove("is-active");
         visual_examples.classList.add("is-active");
-        console.log(document.body.scrollTop);
-        console.log(visual_examples.classList.contains("is-active"));
       }
     }
   }
