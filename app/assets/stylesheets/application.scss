@@ -17,7 +17,9 @@
 
 /// VARIABLES AND GENERAL ///
 
-* {box-sizing: border-box;}
+body {
+  font-family: 'K2D' !important;
+}
 
 $color-primary : rgb(185, 35, 84) ;
 $color-secondary : rgb(244, 237, 198);
