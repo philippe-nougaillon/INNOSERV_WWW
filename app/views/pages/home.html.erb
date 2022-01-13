@@ -49,14 +49,17 @@
 </div>
 
 <script>
+  window.onload = function() {homePageScrollFunction()};
+
   window.onscroll = function() {homePageScrollFunction()};
   
+  // changement de bouton activé de la navbar en fonction de la position sur la page
   function homePageScrollFunction() {
     scrollFunction();
 
     var home = document.getElementById("home-link");
     var trailer = document.getElementById("trailer-link");
-    var visual_examples = document.getElementById("visual_examples-link");
+    var visual_examples = document.getElementById("visual-examples-link");
     
     if(window.location.pathname == '/'){
       if (document.body.scrollTop < 600 && document.documentElement.scrollTop < 600) {
@@ -77,3 +80,9 @@
     }
   }
 </script>
+
+<style type="text/css">
+  *{
+    scroll-behavior: smooth;
+  }
+</style>

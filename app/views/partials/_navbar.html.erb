@@ -1,15 +1,20 @@
 <nav id="navbar" class="navbar is-fixed-top is-vcentered has-background-light">
   <div class="container">
     <div class="navbar-brand">
-      <%= image_tag 'logo.png',class: 'image', id: 'logo', alt: 'logo INNOSERV' %>
-      <a role="button" id="navbar-burger" class="navbar-burger mt-3" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <%= link_to root_path, 'aria-label': 'logo', id: 'logo_link' do %>
+        <%= image_tag 'logo.png',class: 'image', id: 'logo', alt: 'logo INNOSERV' %>
+      <% end %>
+      <a role="button" id="navbar-burger" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div id="navbarMenu" class="navbar-menu">
+    <div id="navbar-menu" class="navbar-menu">
       <div class="navbar-end">
+        <!-- 
+          Il n'y a pas ce code #{ 'is-active' if params[:action] == 'home'} sur le lien home parce que c'est géré dans home.html.erb
+        -->
         <%= link_to "Home",
             root_path, 
             class: "navbar-item is-color-primary ",
@@ -20,10 +25,13 @@
             class: "navbar-item is-color-primary",
             id: "trailer-link"
         %>
+        <!-- 
+          #{ 'is-active' if params[:action] == 'show'} posera problème si il y a plusieurs pages avec des shows
+        -->
         <%= link_to "Visual Examples",
-            root_path(anchor: "visual_examples"),
-            class: "navbar-item is-color-primary",
-            id: "visual_examples-link"
+            root_path(anchor: "visual-examples"),
+            class: "navbar-item #{ 'is-active' if params[:action] == 'show'} is-color-primary",
+            id: "visual-examples-link "
         %>
         <%= link_to "About",
             about_path, 
