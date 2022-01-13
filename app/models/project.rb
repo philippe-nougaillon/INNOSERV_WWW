@@ -4,7 +4,4 @@ class Project < ApplicationRecord
 
   default_scope {order(:name)}
   
-  def big_image
-    self.image.gsub('.png','-big.png')
-  end
 end

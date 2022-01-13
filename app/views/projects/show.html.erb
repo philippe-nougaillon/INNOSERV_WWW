@@ -25,7 +25,7 @@
   </div>
 
   <div class="has-text-centered mb-4 pb-6">
-    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '800', class:"is-centered", poster: @project.image + '.png', controls: true, preload: 'none' %>
+    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '800', class:"is-centered", poster: @project.image + '.webp', controls: true, preload: 'none' %>
   </div>
 
   <%= simple_format(@project.information, wrapper_tag: 'div', class: 'is-size-5') %>
