@@ -55,15 +55,13 @@
           </ul>
         </li>
       <% end %>
-      <% if FileTest.exist?("public/videos/#{@project.videofile}.mp4") %>
-        <li> Video file
-          <ul class="is-size-6">
-            <li style="text-decoration: underline;">
-              <%= link_to "#{@project.videofile}.mp4", download_video_file_project_path %>
-            </li>
-          </ul>
-        </li>
-      <% end %>
+      <li> Video file
+        <ul class="is-size-6">
+          <li style="text-decoration: underline;">
+            <%= link_to "#{@project.videofile}.mp4", "https://philnoug.freeboxos.fr:53562/share/-tKtC46ix2zTYs9D/#{@project.videofile}.mp4" %>
+          </li>
+        </ul>
+      </li>
       <li> Subtitles
         <ul class="is-size-6">
           <% if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.srt") %>
