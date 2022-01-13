@@ -1,0 +1,38 @@
+<script>
+  window.onload = function() {homePageScrollFunction()};
+
+  window.onscroll = function() {homePageScrollFunction()};
+  
+  // changement de bouton activé de la navbar en fonction de la position sur la page
+  function homePageScrollFunction() {
+    scrollFunction();
+
+    var home = document.getElementById("home-link");
+    var trailer = document.getElementById("trailer-link");
+    var visual_examples = document.getElementById("visual-examples-link");
+    
+    if(window.location.pathname == '/'){
+      if (document.body.scrollTop < 600 && document.documentElement.scrollTop < 600) {
+        home.classList.add("is-active");
+        trailer.classList.remove("is-active");
+        visual_examples.classList.remove("is-active");
+        console.log(document.body.scrollTop);
+        console.log(visual_examples.classList.contains("is-active"));
+      } 
+      else if (document.body.scrollTop < 1600 && document.documentElement.scrollTop < 1600) {
+        home.classList.remove("is-active");
+        trailer.classList.add("is-active");
+        visual_examples.classList.remove("is-active");
+        console.log(document.body.scrollTop);
+        console.log(visual_examples.classList.contains("is-active"));
+      }
+      else{
+        home.classList.remove("is-active");
+        trailer.classList.remove("is-active");
+        visual_examples.classList.add("is-active");
+        console.log(document.body.scrollTop);
+        console.log(visual_examples.classList.contains("is-active"));
+      }
+    }
+  }
+</script>
