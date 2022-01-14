@@ -25,7 +25,12 @@
   </div>
 
   <div class="has-text-centered mb-4 pb-6">
-    <%= video_tag "/videos/#{@project.videofile}.mp4", width: '800', class:"is-centered", poster: @project.image + '.webp', controls: true, preload: 'none' %>
+    <%= video_tag "/videos/#{@project.videofile}.mp4", 
+        width: '800', class:"is-centered", 
+        poster: @project.image + '.webp', 
+        controls: @project.video, 
+        preload: 'none' 
+    %>
   </div>
 
   <%= simple_format(@project.information, wrapper_tag: 'div', class: 'is-size-5') %>
@@ -55,32 +60,34 @@
           </ul>
         </li>
       <% end %>
-      <li> Video file
-        <ul class="is-size-6">
-          <li style="text-decoration: underline;">
-            <%= link_to "#{@project.videofile}.mp4", "https://philnoug.freeboxos.fr:53562/share/-tKtC46ix2zTYs9D/#{@project.videofile}.mp4" %>
-          </li>
-        </ul>
-      </li>
-      <li> Subtitles
-        <ul class="is-size-6">
-          <% if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.srt") %>
+      <% if @project.video %>
+        <li> Video file
+          <ul class="is-size-6">
             <li style="text-decoration: underline;">
-            <%= link_to "English", download_subtitle_file_project_path(lang: "EN") %>
+              <%= link_to "#{@project.videofile}.mp4", "https://philnoug.freeboxos.fr:53562/share/-tKtC46ix2zTYs9D/#{@project.videofile}.mp4" %>
             </li>
-          <% end %>
-          <% if FileTest.exist?("public/subtitles/#{@project.videofile}_DE.srt") %>
-            <li style="text-decoration: underline;">
-            <%= link_to "Deutsch", download_subtitle_file_project_path(lang: "DE") %>
-            </li>
-          <% end %>
-          <% if FileTest.exist?("public/subtitles/#{@project.videofile}_FR.srt") %>
-            <li style="text-decoration: underline;">
-            <%= link_to "French", download_subtitle_file_project_path(lang: "FR") %>
-            </li>
-          <% end %>
-        </ul>
-      </li>
+          </ul>
+        </li>
+        <li> Subtitles
+          <ul class="is-size-6">
+            <% if FileTest.exist?("public/subtitles/#{@project.videofile}_EN.srt") %>
+              <li style="text-decoration: underline;">
+              <%= link_to "English", download_subtitle_file_project_path(lang: "EN") %>
+              </li>
+            <% end %>
+            <% if FileTest.exist?("public/subtitles/#{@project.videofile}_DE.srt") %>
+              <li style="text-decoration: underline;">
+              <%= link_to "Deutsch", download_subtitle_file_project_path(lang: "DE") %>
+              </li>
+            <% end %>
+            <% if FileTest.exist?("public/subtitles/#{@project.videofile}_FR.srt") %>
+              <li style="text-decoration: underline;">
+              <%= link_to "French", download_subtitle_file_project_path(lang: "FR") %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
