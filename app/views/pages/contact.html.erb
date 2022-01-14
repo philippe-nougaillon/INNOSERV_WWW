@@ -8,6 +8,7 @@
     </div>
   </section>
 <% end %>
+
 <div class="container content il-large is-fluid has-text-centered">
   <h1 class="title is-1 is-color-primary my-6">
     Contact
@@ -19,22 +20,22 @@
     Fill out the form below and we will respond as soon as possible.
   </p>
 
-<%= form_tag do %>
-  <div class="column is-half is-offset-one-quarter has-text-left">
-    <div class="mb-3">
-      <%= text_field_tag :email, params[:email], class:(@email_error ? 'input is-danger' : 'input' ), placeholder: 'Email*', required: true %>
-      <% if alert %>
-        <p class="has-text-danger is-size-6 mt-2 mb-5">
-          <%= alert %>
-        </p>
-      <% end %>
+  <%= form_tag do %>
+    <div class="column is-half is-offset-one-quarter has-text-left">
+      <div class="mb-3">
+        <%= text_field_tag :email, params[:email], class:(@email_error ? 'input is-danger' : 'input' ), placeholder: 'Email*', required: true %>
+        <% if alert %>
+          <p class="has-text-danger is-size-6 mt-2 mb-5">
+            <%= alert %>
+          </p>
+        <% end %>
+      </div>
+      <%= text_field_tag :subject, params[:subject], class:'input mb-3', placeholder: 'Subject*', required: true %>
+      <%= text_area_tag :content, params[:content], rows: 10, class:'textarea mb-3', placeholder: 'Content*', required: true %>
+      <p class="mb-5">* : must be filled</p>
+      <div class="action mb-6">
+        <%= submit_tag "Submit", class:'button is-background-color-primary is-medium is-outlined' %>
+      </div>
     </div>
-    <%= text_field_tag :subject, params[:subject], class:'input mb-3', placeholder: 'Subject*', required: true %>
-    <%= text_area_tag :content, params[:content], rows: 10, class:'textarea mb-3', placeholder: 'Content*', required: true %>
-    <p class="mb-5">* : must be filled</p>
-    <div class="action mb-6">
-      <%= submit_tag "Submit", class:'button is-background-color-primary is-medium is-outlined' %>
-    </div>
-  </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
