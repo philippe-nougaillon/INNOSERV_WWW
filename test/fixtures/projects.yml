@@ -1,25 +1,27 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
+#problème quand les fieds sont à false, ou quand ils ne sont pas déclarés
+
 one:
   name: MyString
   description: MyString
-  image: MyString
+  image: mobile health service
   information: MyText
   website: MyString
-  videofile: MyString
-  subTitles: MyString
-  fieldOfEducation: false
-  fieldOfWelfare: false
-  fieldOfHealth: false
+  videofile: MobileHealth
+  #problème quand les fieds sont à false, ou quand ils ne sont pas déclarés
+  fieldOfEducation: true
+  fieldOfWelfare: true
+  fieldOfHealth: true
 
 two:
   name: MyString
   description: MyString
-  image: MyString
+  image: KYOH telehealth-1
   information: MyText
   website: MyString
-  videofile: MyString
-  subTitles: MyString
+  videofile: KYOH
+  #problème quand les fieds sont à false, ou quand ils ne sont pas déclarés
   fieldOfEducation: false
   fieldOfWelfare: false
   fieldOfHealth: false
