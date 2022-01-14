@@ -57,7 +57,6 @@ end
 
 # Bulma
 gem 'bulma-rails', '~> 0.9.0'
-gem 'bulma-extensions-rails', '~> 6.2.7'
 gem 'bulma_form_builder'
 
 # FriendlyId is the "Swiss Army bulldozer" of slugging and permalink plugins for Active Record.
