@@ -5,57 +5,47 @@ class ProjectsTest < ApplicationSystemTestCase
     @project = projects(:one)
   end
 
-  test "visiting the index" do
-    visit projects_url
-    assert_selector "h1", text: "Projects"
+  test "télécharger vidéo" do
+    visit project_path(@project)
+
+    click_on "#{@project.videofile}.mp4"
+    sleep(80)
+    assert File.exists?( File.expand_path "~/Downloads/#{@project.videofile}.mp4" )
   end
 
-  test "creating a Project" do
-    visit projects_url
-    click_on "New Project"
+  test "télécharger le final report" do
+    visit project_path(@project)
 
-    fill_in "Description", with: @project.description
-    check "Fieldofeducation" if @project.fieldOfEducation
-    check "Fieldofhealth" if @project.fieldOfHealth
-    check "Fieldofwelfare" if @project.fieldOfWelfare
-    fill_in "Image", with: @project.image
-    fill_in "Information", with: @project.information
-    fill_in "name", with: @project.name
-    fill_in "Subtitles", with: @project.subTitles
-    fill_in "Videofile", with: @project.videofile
-    fill_in "Website", with: @project.website
-    click_on "Create Project"
-
-    assert_text "Project was successfully created"
-    click_on "Back"
+    click_on "#{@project.videofile}_final.pdf"
+    sleep(4)
+    assert File.exists?( File.expand_path "~/Downloads/#{@project.videofile}_final.pdf" )
   end
 
-  test "updating a Project" do
-    visit projects_url
-    click_on "Edit", match: :first
+  test "télécharger sous-titres anglais" do
+    visit project_path(@project)
 
-    fill_in "Description", with: @project.description
-    check "Fieldofeducation" if @project.fieldOfEducation
-    check "Fieldofhealth" if @project.fieldOfHealth
-    check "Fieldofwelfare" if @project.fieldOfWelfare
-    fill_in "Image", with: @project.image
-    fill_in "Information", with: @project.information
-    fill_in "name", with: @project.name
-    fill_in "Subtitles", with: @project.subTitles
-    fill_in "Videofile", with: @project.videofile
-    fill_in "Website", with: @project.website
-    click_on "Update Project"
-
-    assert_text "Project was successfully updated"
-    click_on "Back"
+    click_on "English"
+    sleep(4)
+    assert File.exists?( File.expand_path "~/Downloads/#{@project.videofile}_EN.srt" )
   end
 
-  test "destroying a Project" do
-    visit projects_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
+  test "télécharger sous-titres français" do
+    visit project_path(@project)
 
-    assert_text "Project was successfully destroyed"
+    click_on "French"
+    sleep(4)
+    assert File.exists?( File.expand_path "~/Downloads/#{@project.videofile}_FR.srt" )
   end
+
+  test "télécharger sous-titres allemands" do
+    visit project_path(@project)
+
+    click_on "Deutsch"
+    sleep(4)
+    assert File.exists?( File.expand_path "~/Downloads/#{@project.videofile}_DE.srt" )
+  end
+
 end
+
+
+

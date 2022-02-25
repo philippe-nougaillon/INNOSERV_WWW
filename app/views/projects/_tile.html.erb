@@ -1,6 +1,6 @@
 <div class="tile is-parent is-4 pb-6">
   <article class="box tile is-child project-tile">
-    <%= link_to project do %>
+    <%= link_to project, id: project.name do %>
       <figure class="image">
         <% if FileTest.exist?('app/assets/images/' + project.image + '.webp') %>
           <%= image_tag project.image + '.webp', width: '100%', height: '100%', alt: "image du projet '#{ project.name }'", loading: 'lazy' %>
