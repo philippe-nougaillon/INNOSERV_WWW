@@ -10,35 +10,40 @@
         <div class="column has-text-centered mx-4">
           <%= link_to "Home",
             root_path, 
-            class: "is-color-primary" 
+            class: "is-color-primary",
+            id: "home-footer-link"
           %>
         </div>
         |
         <div class="column has-text-centered mx-4">
           <%= link_to "Trailer",
             root_path(anchor: "trailer"),
-            class: "is-color-primary" 
+            class: "is-color-primary",
+            id: "trailer-footer-link"
           %>
         </div>
         |
         <div class="column has-text-centered mx-4">
           <%= link_to "Visual Examples",
             root_path(anchor: "visual-examples"),
-            class: "is-color-primary" 
+            class: "is-color-primary",
+            id: "visual-examples-footer-link"
           %>
         </div>
         |
         <div class="column has-text-centered mx-4">
           <%= link_to "About",
             about_path, 
-            class: "is-color-primary" 
+            class: "is-color-primary",
+            id: "about-footer-link"
           %>
         </div>
         |
         <div class="column has-text-centered mx-4">
           <%= link_to "Contact",
             contact_path, 
-            class: "is-color-primary" 
+            class: "is-color-primary",
+            id: "contact-footer-link"
           %>
         </div>
       </div>
@@ -47,12 +52,19 @@
     </div>
     <div class="column is-one-fifth mx-4 has-text-centered">
     
-      <%= link_to ("https://cordis.europa.eu/project/id/290542"), 'aria-label': 'cordis.europa.eu' do %>
+      <%= link_to ("https://cordis.europa.eu/project/id/290542"), id: 'cordis-europa', 'aria-label': 'cordis.europa.eu' do %>
         <%= image_tag 'FP7.webp', class:'mb-5 is-centered', width: '100%', height: '100%', alt: 'Logo European Commission European research Area / Seventh Framework Programme, funded under Socio-economic Sciences & Humanities', loading: 'lazy' %>
       <% end %>
       <a href="https://www.facebook.com/innoserv" class="mx-3" target="_blank" rel="noreferrer noopener" aria-label="Facebook">
         <em class="fab fa-facebook fa-2x"></em>
       </a>
+      <%
+=begin%>
+ <%= link_to ("https://www.facebook.com/innoserv"), id: 'facebook-link', class: 'mx-3', target:"_blank", rel:"noreferrer noopener", 'aria-label':"Facebook" do %>
+        <%= image_tag '', class: 'fab fa-facebook fa-2x'>
+      <% end %> 
+<%
+=end%>
       <a href="https://twitter.com/INNOSERVproject" class="mx-3" target="_blank" rel="noreferrer noopener" aria-label="Twitter">
         <em class="fab fa-twitter fa-2x"></em>
       </a>
