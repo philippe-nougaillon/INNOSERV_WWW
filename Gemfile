@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.6'
+gem 'rails', '~> 7.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -68,7 +68,7 @@ gem 'bulma_form_builder'
 gem 'friendly_id', '~> 5.4.0'
 
 # Simple, internationalized and DRY page titles and headings for Rails.
-gem 'page_title_helper'
+gem 'page_title_helper', github: 'lwe/page_title_helper', branch: 'feature/rails-7'
 
 # Search Engine Optimization (SEO) plugin for Ruby on Rails applications.
 gem 'meta-tags'
