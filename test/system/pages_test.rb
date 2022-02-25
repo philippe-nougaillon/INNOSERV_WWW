@@ -180,23 +180,23 @@ class PagesTest < ApplicationSystemTestCase
     click_on "cordis-europa"
   end
 
-  # test "cliquer sur le bouton facebook" do
-  #   visit root_path
+  test "cliquer sur le bouton facebook" do
+    visit root_path
 
-  #   click_on "facebook-link"
-  # end
+    click_on "facebook-link"
+  end
 
-  # test "cliquer sur le bouton twitter" do
-  #   visit root_path
+  test "cliquer sur le bouton twitter" do
+    visit root_path
 
-  #   click_on "twitter-link"
-  # end
+    click_on "twitter-link"
+  end
 
-  # test "cliquer sur le bouton youtube" do
-  #   visit root_path
+  test "cliquer sur le bouton youtube" do
+    visit root_path
 
-  #   click_on "youtube-link"
-  # end
+    click_on "youtube-link"
+  end
 
   test "Affichage de tous les projets" do
     visit root_path
